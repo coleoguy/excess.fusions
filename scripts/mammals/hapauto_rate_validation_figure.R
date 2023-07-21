@@ -4,8 +4,8 @@ library(phytools)
 library(viridis) 
 
 #### LOAD IN TEST STOCHASTIC MAP ####
-load("../outputs/test.hist.RData")
-dat <- read.csv("../data/chromes/dat.csv",
+load("../outputs/mammals/test.hist.RData")
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
 
 #### SUBSET TREE TO JUST ARTIODACTYLS ####

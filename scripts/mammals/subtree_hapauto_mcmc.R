@@ -7,9 +7,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/chromes/dat.csv",
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                  as.is=T)[,c(1,3)]
-tree <- read.tree("../data/trees/tree.nex")
+tree <- read.tree("../data/mammals/trees/tree.nex")
 
 #### CUT TREE ####
 
@@ -120,12 +120,12 @@ for(i in 1:5){
 
   #Save matrix
   write.csv(parMat,
-            paste0("../data/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
+            paste0("../data/mammals/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
             row.names=F,quote=F)
 
   #Save tree newick
   write.tree(split.tree,
-             paste0("../data/trees/subtrees/tree_",clades[i],".nex"))
+             paste0("../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
   
 }
 

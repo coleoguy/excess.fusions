@@ -2,8 +2,8 @@
 library(ggplot2)
 
 #### LOAD DATA ####
-hpd.intervals <- read.csv("../outputs/HPD_intervals.csv")[,-1]
-raw.dat <- read.csv("../outputs/proportions_raw.csv")[,-1]
+hpd.intervals <- read.csv("../outputs/mammals/HPD_intervals.csv")[,-1]
+raw.dat <- read.csv("../outputs/mammals/proportions_raw.csv")[,-1]
 
 #### OVERLAP PLOTS ####
 theme_density <- theme(panel.grid.major = element_blank(),
@@ -35,7 +35,7 @@ plot(SAF.overlap)
 
 #### SAVE PLOT ####
 ggsave(SAF.overlap,
-       filename = paste0("../figures/observed_null_overlap.pdf"),
+       filename = paste0("../figures/mammals/observed_null_overlap.pdf"),
        width = 7,
        height = 7,
        units = "in")

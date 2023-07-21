@@ -5,9 +5,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/chromes/dat.csv",
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,4)]
-tree <- force.ultrametric(read.tree("../data/trees/cut.tree.nex"))
+tree <- force.ultrametric(read.tree("../data/mammals/trees/cut.tree.nex"))
 
 #### BUILD + CONSTRAIN MODEL ####
 
@@ -107,10 +107,10 @@ diag(parMat) <- -rowSums(parMat)
 
 #### SAVE QMATRIX ####
 write.csv(parMat,
-          paste0("../data/transition_matrix/Q_matrix_SAF.csv"),
+          paste0("../data/mammals/transition_matrix/Q_matrix_SAF.csv"),
           row.names=F,quote=F)
 write.csv(mat,
-          paste0("../data/transition_matrix/transition_matrix_SAF.csv"),
+          paste0("../data/mammals/transition_matrix/transition_matrix_SAF.csv"),
           row.names=F,quote=F)
 
 

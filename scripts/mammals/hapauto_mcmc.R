@@ -5,9 +5,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/chromes/dat.csv",
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
-tree <- force.ultrametric(read.nexus("../data/trees/cut.tree.nex"))
+tree <- force.ultrametric(read.nexus("../data/mammals/trees/cut.tree.nex"))
 
 #subset dat to only include tips in cut tree
 dat <- dat[which(dat$tree.name %in% tree$tip.label),]
@@ -66,6 +66,6 @@ diag(parMat) <- -rowSums(parMat)
 
 #### SAVE QMATRIX ####
 write.csv(parMat,
-          paste0("../data/transition_matrix/Q_matrix_hapauto.csv"),
+          paste0("../data/mammals/transition_matrix/Q_matrix_hapauto.csv"),
           row.names=F,quote=F)
 

@@ -3,15 +3,15 @@
 library(phytools)
 library(doSNOW)
 library(viridis)
-source("functions.R")
+source("../functions.R")
 
 #### LOAD DATA ####
-dat <- read.csv("../data/chromes/dat.csv",
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,4)]
-tree <- read.tree("../data/trees/tree.nex")
-mat <- as.matrix(read.csv("../data/transition_matrix/transition_matrix_SAF.csv",
+tree <- read.tree("../data/mammals/trees/tree.nex")
+mat <- as.matrix(read.csv("../data/mammals/transition_matrix/transition_matrix_SAF.csv",
                           as.is=T,header = T))
-Qmat <- as.matrix(read.csv("../data/transition_matrix/Q_matrix_SAF.csv",
+Qmat <- as.matrix(read.csv("../data/mammals/transition_matrix/Q_matrix_SAF.csv",
                            as.is=T,header=T))
 
 #### BUILD DATA MATRIX ####
@@ -63,8 +63,8 @@ prop.XY <- hists.summarized$times[,1]/hists.summarized$times[,9]
 overalprop.xy <- sum(hists.summarized$times[,1])/sum(hists.summarized$times[,9])
 
 #### SAVE OUTPUTS ####
-save(hists.summarized, file = "../outputs/SAF_maps/hists.summarized.RData")
-save(hists, file="../outputs/SAF_maps/hists.RData")
+save(hists.summarized, file = "../outputs/mammals/SAF_maps/hists.summarized.RData")
+save(hists, file="../outputs/mammals/SAF_maps/hists.RData")
 
 
 

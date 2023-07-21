@@ -3,12 +3,12 @@
 library(phytools)
 library(doSNOW)
 library(viridis)
-source("functions.R")
+source("../functions.R")
 
 #### LOAD DATA ####
-dat <- read.csv("../data/chromes/dat.csv",
+dat <- read.csv("../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
-mat <- as.matrix(read.csv("../data/transition_matrix/transition_matrix_hapauto.csv",
+mat <- as.matrix(read.csv("../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
                           as.is=T,header = T))
 clades <- c("carnivora",
             "artiodactyla",
@@ -29,8 +29,8 @@ foreach(i=1:5,
         .packages = c("phytools","maps","ape")) %dopar% {
   
   # load in subtree and Qmatrix
-  split.tree <- read.tree(paste0("../data/trees/subtrees/tree_",clades[i],".nex"))
-  Qmat <- as.matrix(read.csv(paste0("../data/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
+  split.tree <- read.tree(paste0("../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+  Qmat <- as.matrix(read.csv(paste0("../data/mammals/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
                             as.is=T,header = T))
   
   #Subset data
@@ -73,9 +73,9 @@ foreach(i=1:5,
   hists.summarized <- describe.simmap2(hists.fixed)
   
   #### SAVE OUTPUTS ####
-  save(hists.summarized, file = paste0("../outputs/hapauto_maps/subtrees/hists.",clades[i],".summarized.RData"))
-  save(hists, file=paste0("../outputs/hapauto_maps/subtrees/hists.",clades[i],".RData"))
-  save(hists.fixed, file=paste0("../outputs/hapauto_maps/subtrees/hists.",clades[i],".fixed.RData"))
+  save(hists.summarized, file = paste0("../outputs/mammals/hapauto_maps/subtrees/hists.",clades[i],".summarized.RData"))
+  save(hists, file=paste0("../outputs/mammals/hapauto_maps/subtrees/hists.",clades[i],".RData"))
+  save(hists.fixed, file=paste0("../outputs/mammals/hapauto_maps/subtrees/hists.",clades[i],".fixed.RData"))
 }
 
 stopCluster(cl)

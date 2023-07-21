@@ -3,7 +3,7 @@
 library(phytools)
 library(evobiR)
 library(coda)
-source("functions.R")
+source("../functions.R")
 
 clades <- c("carnivora",
             "artiodactyla",
@@ -13,9 +13,9 @@ clades <- c("carnivora",
 
 #### LOOP THROUGH
 for(i in 1:5){
-  load(file=paste0("../outputs/hapauto_maps/subtrees/hists.",clades[i],".summarized.RData"))
+  load(file=paste0("../outputs/mammals/hapauto_maps/subtrees/hists.",clades[i],".summarized.RData"))
   hapauto.summarized <- hists.summarized
-  load(file=paste0("../outputs/SAF_maps/subtrees/hists.",clades[i],".summarized.RData"))
+  load(file=paste0("../outputs/mammals/SAF_maps/subtrees/hists.",clades[i],".summarized.RData"))
   SAF.summarized <- hists.summarized
   
   rm(hists.summarized)
@@ -124,12 +124,12 @@ for(i in 1:5){
                        HPDinterval(as.mcmc(expSA)))
   
   write.csv(hpd.intervals,
-            paste0("../outputs/subtrees/HPD_",clades[i],"_intervals.csv"),
+            paste0("../outputs/mammals/subtrees/HPD_",clades[i],"_intervals.csv"),
             quote=F,
             row.names=T)
   
   write.csv(raw.props,
-            paste0("../outputs/subtrees/proportions_",clades[i],"_raw.csv"),
+            paste0("../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"),
             quote=F,
             row.names=T)
 }
