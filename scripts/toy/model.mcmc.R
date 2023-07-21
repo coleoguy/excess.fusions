@@ -5,15 +5,15 @@ library(chromePlus)
 library(diversitree)
 
 #### BUILD TEST TREE AND TEST DATASET ####
-tree <- rcoal(20)
-dat <- as.data.frame(matrix(data=c(tree$tip.label,
-                                   sample(x=1:10,size=20,replace=T),
-                                   sample(c("fused","unfused"),size=20,replace=T)),
-                            ncol=3,
-                            byrow = F)) 
-colnames(dat) <- c("tree.name","hapauto","scs")
-write.nexus(tree,file="../../data/toy/tree.nex")
-write.csv(dat,file="../../data/toy/dat.csv",row.names = F)
+# tree <- rcoal(20)
+# dat <- as.data.frame(matrix(data=c(tree$tip.label,
+#                                    sample(x=1:10,size=20,replace=T),
+#                                    sample(c("fused","unfused"),size=20,replace=T)),
+#                             ncol=3,
+#                             byrow = F)) 
+# colnames(dat) <- c("tree.name","hapauto","scs")
+# write.nexus(tree,file="../../data/toy/tree.nex")
+# write.csv(dat,file="../../data/toy/dat.csv",row.names = F)
 
 ########## START HERE #############
 dat <- read.csv("../../data/toy/dat.csv",
