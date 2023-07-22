@@ -1124,10 +1124,10 @@ fix.simmap <- function(hists, tips, transition.matrix){
     # catalog the simulation states at each node and tip of the maps
     tip.states <- c()
     
-    for(j in 1:length(hist[[i]]$tip.label)){
-      tip.leading.edge <- which(hist[[i]]$edge[,2] == j)
-      tip.state <- names(hist[[i]]$maps[[tip.leading.edge]]
-                        [length(hist[[i]]$maps[[tip.leading.edge]])])
+    for(j in 1:length(hists[[i]]$tip.label)){
+      tip.leading.edge <- which(hists[[i]]$edge[,2] == j)
+      tip.state <- names(hists[[i]]$maps[[tip.leading.edge]]
+                        [length(hists[[i]]$maps[[tip.leading.edge]])])
       tip.states <- c(tip.states,tip.state)
     }
     

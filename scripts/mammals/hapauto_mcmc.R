@@ -5,9 +5,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/mammals/chromes/dat.csv",
+dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
-tree <- force.ultrametric(read.nexus("../data/mammals/trees/cut.tree.nex"))
+tree <- force.ultrametric(read.nexus("../../data/mammals/trees/cut.tree.nex"))
 
 #subset dat to only include tips in cut tree
 dat <- dat[which(dat$tree.name %in% tree$tip.label),]
@@ -35,13 +35,26 @@ model.con <- constrainMkn(data.matrix,
                           constrain = list(drop.poly=T,
                                            drop.demi=T))
 
+#test run MCMC
+temp.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
+                                x.init=runif(2,0,1),
+                                prior=make.prior.exponential(r=10),
+                                #upper=c(100,100,100,100),
+                                nsteps = 100,
+                                w=1)
+
+#extract tuning params
+temp.mcmc <- temp.mcmc[-c(1:50), ]
+w <- diff(sapply(temp.mcmc[2:3],
+                 quantile, c(.05, .95)))
+
 #run MCMC
 model.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
-                                x.init=c(1,1),
+                                x.init=runif(2,0,1),
                                 prior=make.prior.exponential(r=10),
                                 #upper=c(100,100,100,100),
                                 nsteps = 500,
-                                w=1)
+                                w=w)
 
 #### BUILD QMATRIX ####
 model.mcmc.postburn <- model.mcmc[450:500,]
@@ -66,6 +79,6 @@ diag(parMat) <- -rowSums(parMat)
 
 #### SAVE QMATRIX ####
 write.csv(parMat,
-          paste0("../data/mammals/transition_matrix/Q_matrix_hapauto.csv"),
+          paste0("../../data/mammals/transition_matrix/Q_matrix_hapauto.csv"),
           row.names=F,quote=F)
 

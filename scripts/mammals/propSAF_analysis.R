@@ -6,12 +6,12 @@ library(coda)
 source("../functions.R")
 
 #### LOAD IN DATA ####
-dat <- read.csv("../data/mammals/chromes/dat.csv",
+dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)
 
-load(file="../outputs/mammals/hapauto_maps/hists.summarized.RData")
+load(file="../../outputs/mammals/hapauto_maps/hists.summarized.RData")
 hapauto.summarized <- hists.summarized
-load(file="../outputs/mammals/SAF_maps/hists.summarized.RData") 
+load(file="../../outputs/mammals/SAF_maps/hists.summarized.RData") 
 SAF.summarized <- hists.summarized
 
 rm(hists.summarized)
@@ -120,12 +120,12 @@ hpd.intervals$x <- c(HPDinterval(as.mcmc(obspropSAF)),
                      HPDinterval(as.mcmc(expSA)))
 
 write.csv(hpd.intervals,
-          paste0("../outputs/mammals/HPD_intervals.csv"),
+          paste0("../../outputs/mammals/HPD_intervals.csv"),
           quote=F,
           row.names=T)
 
 write.csv(raw.props,
-          paste0("../outputs/mammals/proportions_raw.csv"),
+          paste0("../../outputs/mammals/proportions_raw.csv"),
           quote=F,
           row.names=T)
 

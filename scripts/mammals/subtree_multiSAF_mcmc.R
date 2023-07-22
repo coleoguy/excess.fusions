@@ -7,7 +7,7 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/mammals/chromes/dat.csv",
+dat <- read.csv("../../data/mammals/chromes/dat.csv",
                  as.is=T)[,c(1,4)]
 
 #Create vector of clade names
@@ -61,7 +61,7 @@ extras <- c("SAF", "Ro")
 for(i in 1:5){
   
   # load in subtree
-  split.tree <- read.tree(paste0("../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+  split.tree <- read.tree(paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
     
   #Subset data
   split.data <- subset(dat, tree.name %in% split.tree$tip.label)
@@ -107,14 +107,26 @@ for(i in 1:5){
   model.con <- constrain(model, formulae = formulae, extra = extras)
   
   # Check args: 4 different rates in constrained model, output is as expected
-
+  #test run MCMC
+  temp.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
+                                 x.init=runif(2,0,1),
+                                 prior=make.prior.exponential(r=0.5),
+                                 #upper=c(100,100,100,100),
+                                 nsteps = 100,
+                                 w=1)
+  
+  #extract tuning params
+  temp.mcmc <- temp.mcmc[-c(1:50), ]
+  w <- diff(sapply(temp.mcmc[2:3],
+                   quantile, c(.05, .95)))
+  
   #Run mcmc
   model.mcmc <- diversitree::mcmc(lik=model.con,
-                                  x.init=c(1,1),
+                                  x.init=runif(2,0,1),
                                   prior=make.prior.exponential(r=0.5),
                                   #upper=c(100,100,100,100),
                                   nsteps = 500,
-                                  w=1)
+                                  w=w)
 
   #profiles.plot(model.mcmc["asc1"], col.line="red")
   #### BUILD QMATRIX ####
@@ -143,7 +155,7 @@ for(i in 1:5){
 
   #Save matrix
   write.csv(parMat,
-            paste0("../data/mammals/transition_matrix/subtree_matrices/multiSAF/matrix_",clades[i],".csv"),
+            paste0("../../data/mammals/transition_matrix/subtree_matrices/multiSAF/matrix_",clades[i],".csv"),
             row.names=F,quote=F)
 
 }

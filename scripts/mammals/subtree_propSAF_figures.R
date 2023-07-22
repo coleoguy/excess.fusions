@@ -25,8 +25,8 @@ theme_density <- theme(panel.grid.major = element_blank(),
 for(i in 1:5){
   
   #### LOAD DATA ####
-  hpd.intervals <- read.csv(paste0("../outputs/mammals/subtrees/HPD_",clades[i],"_intervals.csv"))[,-1]
-  raw.dat <- read.csv(paste0("../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
+  hpd.intervals <- read.csv(paste0("../../outputs/mammals/subtrees/HPD_",clades[i],"_intervals.csv"))[,-1]
+  raw.dat <- read.csv(paste0("../../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
   
   #### PLOT ####
   SAF.overlap <- ggplot()+
@@ -46,7 +46,7 @@ for(i in 1:5){
   
   #### SAVE PLOT ####
   ggsave(SAF.overlap,
-         filename = paste0("../figures/mammals/subtrees/observed_null_overlap_",clades[i],".pdf"),
+         filename = paste0("../../figures/mammals/subtrees/observed_null_overlap_",clades[i],".pdf"),
          width = 7,
          height = 7,
          units = "in")

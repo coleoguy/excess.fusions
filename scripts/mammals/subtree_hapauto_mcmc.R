@@ -7,9 +7,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/mammals/chromes/dat.csv",
+dat <- read.csv("../../data/mammals/chromes/dat.csv",
                  as.is=T)[,c(1,3)]
-tree <- read.tree("../data/mammals/trees/tree.nex")
+tree <- read.tree("../../data/mammals/trees/tree.nex")
 
 #### CUT TREE ####
 
@@ -84,14 +84,27 @@ for(i in 1:5){
 
   #Check parMat
   parMat <- model.con$`parameter matrix`
-
+  
+  #test run MCMC
+  temp.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
+                                 x.init=runif(2,0,1),
+                                 prior=make.prior.exponential(r=10),
+                                 #upper=c(100,100,100,100),
+                                 nsteps = 100,
+                                 w=1)
+  
+  #extract tuning params
+  temp.mcmc <- temp.mcmc[-c(1:50), ]
+  w <- diff(sapply(temp.mcmc[2:3],
+                   quantile, c(.05, .95)))
+  
   #Run mcmc
   model.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
-                                  x.init=c(1,1),
+                                  x.init=runif(2,0,1),
                                   prior=make.prior.exponential(r=10),
                                   #upper=c(100,100,100,100),
                                   nsteps = 500,
-                                  w=1)
+                                  w=w)
 
   #profiles.plot(model.mcmc["asc1"], col.line="red")
   #### BUILD QMATRIX ####
@@ -120,12 +133,12 @@ for(i in 1:5){
 
   #Save matrix
   write.csv(parMat,
-            paste0("../data/mammals/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
+            paste0("../../data/mammals/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
             row.names=F,quote=F)
 
   #Save tree newick
   write.tree(split.tree,
-             paste0("../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+             paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
   
 }
 

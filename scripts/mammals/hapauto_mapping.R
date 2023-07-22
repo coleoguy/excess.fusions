@@ -7,10 +7,10 @@ source("../functions.R")
 #### LOAD DATA ####
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
-tree <- read.tree("../data/mammals/trees/tree.nex")
-mat <- as.matrix(read.csv("../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
+tree <- read.tree("../../data/mammals/trees/tree.nex")
+mat <- as.matrix(read.csv("../../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
                           as.is=T,header = T))
-Qmat <- as.matrix(read.csv("../data/mammals/transition_matrix/Q_matrix_hapauto.csv",
+Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto.csv",
                            as.is=T,header=T))
 
 #### BUILD DATA MATRIX ####
@@ -57,7 +57,7 @@ plotSimmap(hist[[48]],col=cols,fsize = 0.05,lwd=1)
 hists.summarized <- describe.simmap2(hists.fixed)
 
 #### SAVE OUTPUTS ####
-save(hists.fixed, file = "../outputs/mammals/hapauto_maps/hists.fixed.RData")
-save(hists, file="../outputs/mammals/hapauto_maps/hists.RData")
-save(hists.summarized, file = "../outputs/mammals/hapauto_maps/hists.summarized.RData")
+save(hists.fixed, file = "../../outputs/mammals/hapauto_maps/hists.fixed.RData")
+save(hists, file="../../outputs/mammals/hapauto_maps/hists.RData")
+save(hists.summarized, file = "../../outputs/mammals/hapauto_maps/hists.summarized.RData")
 

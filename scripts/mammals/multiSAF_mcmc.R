@@ -5,9 +5,9 @@ library(diversitree)
 
 #### LOAD DATA ####
 
-dat <- read.csv("../data/mammals/chromes/dat.csv",
+dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,4)]
-tree <- force.ultrametric(read.tree("../data/mammals/trees/cut.tree.nex"))
+tree <- force.ultrametric(read.tree("../../data/mammals/trees/tree.nex"))
 
 #### BUILD + CONSTRAIN MODEL ####
 
@@ -72,13 +72,26 @@ model.con <- constrain(model, formulae = formulae, extra = extras)
 
 #### ESTIMATE RATES ####
 
+#test run MCMC
+temp.mcmc <- diversitree::mcmc(lik=model.con,
+                                x.init=runif(2,0,1),
+                                prior=make.prior.exponential(r=0.5),
+                                #upper=c(100,100,100,100),
+                                nsteps = 100,
+                                w=1)
+#extract tuning params
+temp.mcmc <- temp.mcmc[-c(1:50), ]
+w <- diff(sapply(temp.mcmc[2:3],
+                 quantile, c(.05, .95)))
+
+
 #run MCMC
 model.mcmc <- diversitree::mcmc(lik=model.con,
-                                x.init=c(1,1),
+                                x.init=runif(2,0,1),
                                 prior=make.prior.exponential(r=0.5),
                                 #upper=c(100,100,100,100),
                                 nsteps = 500,
-                                w=1)
+                                w=w)
 
 #check for convergence
 plot(x=model.mcmc$i,y=model.mcmc$p,type="l")
@@ -107,10 +120,10 @@ diag(parMat) <- -rowSums(parMat)
 
 #### SAVE QMATRIX ####
 write.csv(parMat,
-          paste0("../data/mammals/transition_matrix/Q_matrix_SAF.csv"),
+          paste0("../../data/mammals/transition_matrix/Q_matrix_SAF.csv"),
           row.names=F,quote=F)
 write.csv(mat,
-          paste0("../data/mammals/transition_matrix/transition_matrix_SAF.csv"),
+          paste0("../../data/mammals/transition_matrix/transition_matrix_SAF.csv"),
           row.names=F,quote=F)
 
 
