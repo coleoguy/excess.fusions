@@ -126,12 +126,15 @@ mat <- sapply(mat[,1:ncol(mat)],as.numeric)
 diag(parMat) <- diag(mat) <- 0
 diag(parMat) <- -rowSums(parMat)
 
-#### SAVE MATRICS ####
+#### SAVE MATRICES ####
 #change toy to your clade
 write.csv(parMat,
           paste0("../../data/toy/Q_matrix.csv"),
           row.names=F,quote=F)
 write.csv(mat,
           paste0("../../data/toy/transition_matrix.csv"),
+          row.names=F,quote=F)
+write.csv(model.mcmc,
+          paste0("../../data/toy/mcmc_raw.csv"),
           row.names=F,quote=F)
 
