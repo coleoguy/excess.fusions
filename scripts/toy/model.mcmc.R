@@ -24,12 +24,13 @@ library(diversitree)
 dat <- read.csv("../../data/toy/dat.csv",
                 as.is=T)
 #make sure to check your tree is utlrametric
-tree <- force.ultrametric(read.nexus("../../data/toy/tree.nex"))
+tree <- force.ultrametric(tree = read.tree("../../data/toy/tree.nex"),
+                          method = "extend")
 
 #the follwing lines convert the edge lengths of the tree to unit length and 
 #save the unit length tree
 tree$edge.length <- tree$edge.length/max(branching.times(tree))
-write.nexus(tree,file="../../data/toy/tree.nex") #change the directory accordingly
+write.tree(tree,file="../../data/toy/tree.nex") #change the directory accordingly
 
 #make sure your tip states and tree are pruned to one another here, and that your
 #tip states are in the same order that your tree tip labels are in

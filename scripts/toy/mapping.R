@@ -9,7 +9,7 @@ source("../functions.R")
 #replace "toy" here with your clade directory
 dat <- read.csv("../../data/toy/dat.csv",
                 as.is=T)
-tree <- read.nexus("../../data/toy/tree.nex")
+tree <- read.tree("../../data/toy/tree.nex")
 mat <- as.matrix(read.csv("../../data/toy/transition_matrix.csv",
                           as.is=T,header = T))
 Qmat <- as.matrix(read.csv("../../data/toy//Q_matrix.csv",
