@@ -12,7 +12,7 @@ dat <- read.csv("../../data/toy/dat.csv",
 tree <- read.tree("../../data/toy/tree.nex")
 mat <- as.matrix(read.csv("../../data/toy/transition_matrix.csv",
                           as.is=T,header = T))
-Qmat <- as.matrix(read.csv("../../data/toy//Q_matrix.csv",
+Qmat <- as.matrix(read.csv("../../data/toy/Q_matrix.csv",
                            as.is=T,header=T))
 
 #### CONVERT HAPAUTO + SCS INTO SIMULAION STATE ####
