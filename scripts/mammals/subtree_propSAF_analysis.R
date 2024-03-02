@@ -117,8 +117,8 @@ for(i in 1:5){
                        "category")
   hpd.intervals$category <- c(rep("Observed",2),
                       rep("Null",2))
-  hpd.intervals$y <- c(rep(-25,2),
-                       rep(-50,2))
+  hpd.intervals$y <- c(rep(-15,2),
+                       rep(-30,2))
   
   hpd.intervals$x <- c(HPDinterval(as.mcmc(obspropSAF)),
                        HPDinterval(as.mcmc(expSA)))

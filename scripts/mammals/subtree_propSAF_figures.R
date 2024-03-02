@@ -13,14 +13,18 @@ theme_density <- theme(panel.grid.major = element_blank(),
                        panel.grid.minor = element_blank(),
                        panel.background= element_blank(),
                        axis.line = element_line(colour = "black"),
-                       axis.text.x = element_text(size = 15),
-                       axis.text.y = element_text(size = 15),
+                       axis.text.x = element_text(size = 7.5),
+                       axis.text.y = element_text(size = 7.5),
                        axis.title = element_text(face = "bold",
-                                                 size = 15),
+                                                 size = 7.5),
                        legend.title = element_blank(),
-                       plot.title = element_text(face = "bold",
-                                                 size = 17,
-                                                 hjust=0.5))
+                       legend.position = c(0.21,0.8),
+                       legend.key = element_blank(),
+                       legend.box = element_blank(),
+                       legend.box.background = element_blank(),
+                       legend.text = element_text(size=7.5),
+                       legend.key.height= unit(0.1,"inch"),
+                       legend.key.width = unit(0.1,"inch"))
 
 for(i in 1:5){
   
@@ -47,8 +51,8 @@ for(i in 1:5){
   #### SAVE PLOT ####
   ggsave(SAF.overlap,
          filename = paste0("../../figures/mammals/subtrees/observed_null_overlap_",clades[i],".pdf"),
-         width = 7,
-         height = 7,
+         width = 3.5,
+         height = 3.5,
          units = "in")
   
 }
