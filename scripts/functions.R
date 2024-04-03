@@ -1490,7 +1490,9 @@ fix.simmap <- function(hists, tips, transition.matrix){
   }
   
   #### RETURN FIXED OBJECT ####
-  
+  if(length(hists) == 1){
+    hists <- hists[[1]]
+  }
   return(hists)
 }
 

@@ -27,13 +27,13 @@ scaled.tree <- scaleTreeRates(tree = tree,
                               pi="fitzjohn")
 
 ####P PLOT SCALED TREE AND DETERMINE CUTOFF ####
-plot.phyloscaled(scaled.tree,cex=0.05,edge.width = 0.1)
+plot.phyloscaled(scaled.tree,cex=0.05,edge.width = 0.5)
 
 plot(tree,cex=0.05,edge.width = 0.1)
 edgelabels(cex=0.1,frame="none")
 
 cut.tree <- extract.clade(tree,node=tree$edge[1120,2])
-plot(cut.tree,cex=0.05,edge.width = 0.1)
+plot(cut.tree,cex=0.05,edge.width = 0.5)
 
 #### SAVE SCALED TREE AND CUT TREE ####
 write.nexus(cut.tree,file="../../data/mammals/trees/cut.tree.nex")

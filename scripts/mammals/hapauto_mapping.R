@@ -10,8 +10,11 @@ dat <- read.csv("../../data/mammals/chromes/dat.csv",
 tree <- read.tree("../../data/mammals/trees/tree.nex")
 mat <- as.matrix(read.csv("../../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
                           as.is=T,header = T))
-Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto.csv",
+Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_final.csv",
                            as.is=T,header=T))
+
+#scale tree to unit rate
+tree$edge.length <- tree$edge.length/max(branching.times(tree))
 
 #### BUILD DATA MATRIX ####
 

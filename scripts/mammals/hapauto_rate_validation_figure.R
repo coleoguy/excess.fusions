@@ -2,24 +2,69 @@
 library(ape)
 library(phytools)
 library(viridis) 
+source("../functions.R")
 
-#### LOAD IN TEST STOCHASTIC MAP ####
-load("../../outputs/mammals/test.hist.RData")
+#### LOAD IN DATA ####
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
+tree <- read.nexus("../../data/mammals/trees/tree.nex")
+mat <- as.matrix(read.csv("../../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
+                          as.is=T,header = T))
+Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_final.csv",
+                           as.is=T,header=T))
+
+#scale tree to unit rate
+tree$edge.length <- tree$edge.length/max(branching.times(tree))
+
+#### BUILD DATA MATRIX ####
+
+#data.matrix
+data.matrix <- matrix(0,nrow=nrow(dat),
+                      ncol=max(dat$hapauto) - 1)
+
+colnames(data.matrix) <- 1:49
+rownames(data.matrix) <- dat$tree.name
+
+#fill data matrix
+for(i in 1:nrow(data.matrix)){
+  data.matrix[i,as.numeric(dat$hapauto[i]) - 1] <- 1
+}
+
+#column and rownames for mat/Qmat
+rownames(mat) <- 1:49
+colnames(mat) <- 1:49
+rownames(Qmat) <- 1:49
+colnames(Qmat) <- 1:49
+
+####PERFORM TEST STOCHASTIC MAP ####
+testHist <- make.simmap2(tree = tree,
+                      x = data.matrix,
+                      model = mat,
+                      nsim = 1,
+                      Q = Qmat,
+                      rejmax = 1000000,
+                      rejint = 100000,
+                      pi="fitzjohn",
+                      monitor=T)
+
+#fix stochastic maps
+dat$sim.state <- dat$hapauto - 1
+datForFixing <- dat[,-2]
+testHistFixed <- fix.simmap(testHist,datForFixing,mat)
+
 
 #### SUBSET TREE TO JUST ARTIODACTYLS ####
 
 #subset map
-hist.subset <- extract.clade.simmap(tree = hists.fixed.alt[[1]],
-                                    node=hists.fixed.alt[[1]]$edge[448,2])
+hist.subset <- extract.clade.simmap(tree = testHistFixed,
+                                    node=testHistFixed$edge[448,2])
 
 dat <- dat[which(dat$tree.name %in% hist.subset$tip.label),]
 
 #plot
 cols <- c(viridis(49))
 names(cols) <- c(1:49)
-plotSimmap(hists.fixed.alt[[1]],col=cols)
+plotSimmap(testHistFixed,col=cols)
 
 #### GET NODE STATES ####
 
@@ -53,6 +98,8 @@ plotSimmap(hist.subset,col=cols,fsize=0.1,lwd=0.1,pts=T)
 plotSimmap(hist.subset,col=cols,fsize=0.0000001,lwd=0.1)
 nodelabels(node.states,frame="none",cex=0.6)
 tiplabels(dat$hapauto,frame="none",cex=0.6)
+save(testHist, file = "../../outputs/mammals/testHist.RData")
+save(testHistFixed, file = "../../outputs/mammals/testHistFixed.RData")
 
 
 
