@@ -20,7 +20,7 @@ clades <- c("carnivora",
 for(i in 1:5){
   
   # load in subtree and Qmatrix
-  split.tree <- read.tree(paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+  split.tree <- force.ultrametric(read.nexus(paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex")),method="extend")
   Qmat <- as.matrix(read.csv(paste0("../../data/mammals/transition_matrix/subtree_matrices/multiSAF/matrix_",clades[i],".csv"),
                             as.is=T,header = T))
   

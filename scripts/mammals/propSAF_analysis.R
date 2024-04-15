@@ -11,6 +11,15 @@ dat <- read.csv("../../data/mammals/chromes/dat.csv",
 
 load(file="../../outputs/mammals/hapauto_maps/hists.summarized.RData")
 hapauto.summarized <- hists.summarized
+
+failN <- c()
+for(i in 1:100){
+  failN <- c(failN, length(hapauto.summarized$tree[[i]]$fail))
+}
+print(mean(failN))
+hist(failN)
+
+
 load(file="../../outputs/mammals/SAF_maps/hists.summarized.RData") 
 SAF.summarized <- hists.summarized
 

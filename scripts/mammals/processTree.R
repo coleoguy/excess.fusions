@@ -14,7 +14,7 @@ tree <- force.ultrametric(tree = read.tree("../../data/mammals/Alvarez-Carretero
 
 #Trim phylogeny and chromosome data
 dat <- dat[dat$tree.name %in% tree$tip.label, ]
-rownames(data) <- 1:nrow(data)
+rownames(dat) <- 1:nrow(dat)
 tree <- keep.tip(tree, dat$tree.name)
 
 #### SAVE TREE ####

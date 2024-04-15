@@ -7,7 +7,7 @@ library(diversitree)
 
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,4)]
-tree <- force.ultrametric(read.tree("../../data/mammals/trees/tree.nex"))
+tree <- force.ultrametric(read.nexus("../../data/mammals/trees/tree.nex"),method="extend")
 
 #### BUILD + CONSTRAIN MODEL ####
 
@@ -118,7 +118,8 @@ parMat <- sapply(parMat[,1:ncol(parMat)],as.numeric)
 #calculate diagonal
 diag(parMat) <- -rowSums(parMat)
 
-#### SAVE QMATRIX ####
+#### SAVE QMATRIX AND MCMC####
+save(model.mcmc,file="../../outputs/mammals/mcmc/multiSAF.RData")
 write.csv(parMat,
           paste0("../../data/mammals/transition_matrix/Q_matrix_SAF.csv"),
           row.names=F,quote=F)

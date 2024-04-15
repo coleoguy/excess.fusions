@@ -9,7 +9,8 @@ library(diversitree)
 
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                  as.is=T)[,c(1,3)]
-tree <- read.tree("../../data/mammals/trees/tree.nex")
+tree <- force.ultrametric(read.nexus("../../data/mammals/trees/tree.nex"),method="extend")
+
 
 #### CUT TREE ####
 
@@ -52,7 +53,7 @@ for(i in 1:5){
 
   #Scale tree to unit length
   split.tree$edge.length <- split.tree$edge.length/max(branching.times(split.tree))
-  
+
   #### MODEL ####
   
   #Convert to data matrix
@@ -132,13 +133,13 @@ for(i in 1:5){
   diag(parMat) <- -rowSums(parMat)
 
   #Save matrix
+  save(model.mcmc,file=paste0("../../outputs/mammals/mcmc/subtrees/hapauto/",clades[i],".RData"))
   write.csv(parMat,
             paste0("../../data/mammals/transition_matrix/subtree_matrices/hapauto/matrix_",clades[i],".csv"),
             row.names=F,quote=F)
-
   #Save tree newick
-  write.tree(split.tree,
-             paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+  write.nexus(split.tree,
+             file=paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
   
 }
 

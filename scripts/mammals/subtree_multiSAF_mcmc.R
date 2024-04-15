@@ -61,7 +61,7 @@ extras <- c("SAF", "Ro")
 for(i in 1:5){
   
   # load in subtree
-  split.tree <- read.tree(paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex"))
+  split.tree <- force.ultrametric(read.nexus(paste0("../../data/mammals/trees/subtrees/tree_",clades[i],".nex")),method="extend")
     
   #Subset data
   split.data <- subset(dat, tree.name %in% split.tree$tip.label)
@@ -108,7 +108,7 @@ for(i in 1:5){
   
   # Check args: 4 different rates in constrained model, output is as expected
   #test run MCMC
-  temp.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
+  temp.mcmc <- diversitree::mcmc(lik=model.con,
                                  x.init=runif(2,0,1),
                                  prior=make.prior.exponential(r=0.5),
                                  #upper=c(100,100,100,100),
@@ -154,6 +154,7 @@ for(i in 1:5){
   diag(parMat) <- -rowSums(parMat)
 
   #Save matrix
+  save(model.mcmc,file=paste0("../../outputs/mammals/mcmc/subtrees/multiSAF/",clades[i],".RData"))
   write.csv(parMat,
             paste0("../../data/mammals/transition_matrix/subtree_matrices/multiSAF/matrix_",clades[i],".csv"),
             row.names=F,quote=F)

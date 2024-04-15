@@ -7,7 +7,7 @@ library(diversitree)
 
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,3)]
-tree <- force.ultrametric(read.nexus("../../data/mammals/trees/cut.tree.nex"))
+tree <- force.ultrametric(read.nexus("../../data/mammals/trees/cut.tree.nex"),method="extend")
 
 #subset dat to only include tips in cut tree
 dat <- dat[which(dat$tree.name %in% tree$tip.label),]
@@ -77,8 +77,8 @@ parMat <- sapply(parMat[,1:ncol(parMat)],as.numeric)
 #calculate diagonal
 diag(parMat) <- -rowSums(parMat)
 
-#### SAVE QMATRIX ####
+#### SAVE QMATRIX AND MCMC####
+save(model.mcmc,file="../../outputs/mammals/mcmc/hapauto_final.RData")
 write.csv(parMat,
           paste0("../../data/mammals/transition_matrix/Q_matrix_hapauto_final.csv"),
           row.names=F,quote=F)
-

@@ -1,1 +1,249 @@
-(((((((((((((lutra_lutra:0.1909129595,enhydra_lutris:0.1909129595):0.0890521182,galictis_vittata:0.2799650777):0.01693277401,(ictonyx_striatus:0.1833785114,vormela_peregusna:0.1833785114):0.1135193403):0.01563024856,(((((((mustela_putorius_furo:0.01252680551,mustela_lutreola:0.01252680551):0.007771258855,mustela_nigripes:0.02029806437):0.01499157026,mustela_sibirica:0.03528963462):0.01978416874,mustela_itatsi:0.05507380336):0.05043608674,(mustela_altaica:0.07398161124,mustela_nivalis:0.07398161124):0.03152827886):0.03719409301,mustela_erminea:0.1427039831):0.08278743503,mustela_frenata:0.2254914181):0.0870366821):0.02576173632,melogale_moschata:0.3382898366):0.02660249651,((((((martes_melampus:0.05051318275,(martes_zibellina:0.03060174837,martes_martes:0.03060174837):0.01991143438):0.01902218585,martes_americana:0.0695353686):0.06085552954,martes_foina:0.1303908981):0.09266549583,martes_flavigula:0.223056394):0.02252215206,gulo_gulo:0.245578546):0.03168510243,eira_barbara:0.2772636485):0.08762868462):0.022990725,(meles_meles:0.365867774,mellivora_capensis:0.365867774):0.02201528405):0.05774354268,taxidea_taxus:0.4456266008):0.1709596876,((nasua_nasua:0.4338203768,(procyon_lotor:0.2306536694,bassariscus_astutus:0.2306536694):0.2031667073):0.07223057348,potos_flavus:0.5060509502):0.1105353381):0.05492151793,(mephitis_mephitis:0.6340245332,ailurus_fulgens:0.6340245332):0.03748327301):0.09587523585,((((((((phoca_vitulina:0.03468069269,phoca_largha:0.03468069269):0.03142333649,((pusa_hispida:0.04502303967,pusa_sibirica:0.04502303967):0.009530424416,halichoerus_grypus:0.05455346409):0.01155056509):0.09024368974,(phoca_groenlandica:0.111871331,phoca_fasciata:0.111871331):0.04447638793):0.03199459177,cystophora_cristata:0.1883423107):0.104332416,erignathus_barbatus:0.2926747267):0.04920015927,(mirounga_angustirostris:0.2377209398,monachus_schauinslandi:0.2377209398):0.1041539461):0.1677741566,(((((arctocephalus_forsteri:0.07381246069,phocarctos_hookeri:0.07381246069):0.006609758517,arctocephalus_pusillus:0.08042221921):0.02809509835,(zalophus_californianus:0.08571582547,eumetopias_jubatus:0.08571582547):0.02280149209):0.07724687538,callorhinus_ursinus:0.1857641929):0.1640818035,odobenus_rosmarus:0.3498459965):0.1598030461):0.2402066996,(((((ursus_thibetanus:0.1140751209,ursus_americanus:0.1140751209):0.01569716963,helarctos_malayanus:0.1297722905):0.02147728505,(ursus_maritimus:0.02940319603,ursus_arctos:0.02940319603):0.1218463795):0.2121437678,tremarctos_ornatus:0.3633933434):0.09363207032,ailuropoda_melanoleuca:0.4570254137):0.2928303285):0.01752729997):0.1253177405,((((((canis_familiaris:0.1101186093,canis_lupus:0.1101186093):0.06108403767,canis_latrans:0.1712026469):0.1042614156,cuon_alpinus:0.2754640625):0.05038154433,lycaon_pictus:0.3258456068):0.04093333878,(((atelocynus_microtis:0.113843143,cerdocyon_thous:0.113843143):0.1877836744,chrysocyon_brachyurus:0.3016268174):0.04948927263,speothos_venaticus:0.35111609):0.0156628556):0.1550989212,(((((vulpes_vulpes:0.1795978244,vulpes_corsac:0.1795978244):0.04998939124,(vulpes_lagopus:0.04243262009,vulpes_macrotis:0.04243262009):0.1871545955):0.2123069139,nyctereutes_procyonoides:0.4418941295):0.03101507706,otocyon_megalotis:0.4729092065):0.01774885674,urocyon_cinereoargenteus:0.4906580633):0.03121980352):0.3708229158):0.1072992174,((((((((herpestes_auropunctatus:0.03647852126,herpestes_javanicus:0.03647852126):0.1606603861,atilax_paludinosus:0.1971389074):0.05386276587,(helogale_parvula:0.1868443713,suricata_suricatta:0.1868443713):0.06415730194):0.2231631241,((galidia_elegans:0.37384443,cryptoprocta_ferox:0.37384443):0.01570828523,fossa_fossana:0.3895527152):0.08461208218):0.07878346811,(parahyaena_brunnea:0.1827792352,(proteles_cristatus:0.1659801707,crocuta_crocuta:0.1659801707):0.01679906454):0.3701690303):0.1013882855,(((((genetta_maculata:0.1077601676,genetta_pardina:0.1077601676):0.005874195333,(genetta_tigrina:0.02325578233,genetta_genetta:0.02325578233):0.0903785806):0.04341742117,genetta_johnstoni:0.1570517841):0.2940048941,viverricula_indica:0.4510566782):0.06958988902,((arctictis_binturong:0.1963692724,paguma_larvata:0.1963692724):0.2194220737,hemigalus_derbyanus:0.4157913462):0.104855221):0.1336899839):0.03592038924,((((((((felis_silvestris:0.03951356514,felis_catus:0.03951356514):0.02406770466,felis_margarita:0.06358126981):0.1216337331,(felis_chaus:0.1665987784,felis_nigripes:0.1665987784):0.01861622457):0.09545889607,((prionailurus_bengalensis:0.0006959338519,prionailurus_bengalensis_euptilurus:0.0006959338519):0.08277743885,prionailurus_viverrinus:0.0834733727):0.1972005263):0.03036838948,(((lynx_lynx:0.1549612216,lynx_rufus:0.1549612216):0.09359099088,(puma_concolor:0.2008638438,acinonyx_jubatus:0.2008638438):0.04768836862):0.05532474641,(caracal_caracal:0.2424362124,leptailurus_serval:0.2424362124):0.06144074647):0.007165329629):0.0320426806,((leopardus_pardalis:0.1864135553,leopardus_colocolo:0.1864135553):0.01552318622,(leopardus_geoffroyi:0.1295403126,leopardus_tigrinus:0.1295403126):0.07239642888):0.1411482276):0.04118188989,(((panthera_pardus:0.1159309438,panthera_leo:0.1159309438):0.0833251644,(panthera_tigris_altaica:0.03811686497,panthera_tigris:0.03811686497):0.1611392433):0.06299902354,neofelis_nebulosa:0.2622551318):0.1220117272):0.245451585,prionodon_linsang:0.6297184439):0.06053849635):0.08308416188,nandinia_binotata:0.7733411022):0.2266588978):0;
+#NEXUS
+[R-package APE, Fri Apr 12 17:47:20 2024]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 118;
+	TAXLABELS
+		lutra_lutra
+		enhydra_lutris
+		galictis_vittata
+		ictonyx_striatus
+		vormela_peregusna
+		mustela_putorius_furo
+		mustela_lutreola
+		mustela_nigripes
+		mustela_sibirica
+		mustela_itatsi
+		mustela_altaica
+		mustela_nivalis
+		mustela_erminea
+		mustela_frenata
+		melogale_moschata
+		martes_melampus
+		martes_zibellina
+		martes_martes
+		martes_americana
+		martes_foina
+		martes_flavigula
+		gulo_gulo
+		eira_barbara
+		meles_meles
+		mellivora_capensis
+		taxidea_taxus
+		nasua_nasua
+		procyon_lotor
+		bassariscus_astutus
+		potos_flavus
+		mephitis_mephitis
+		ailurus_fulgens
+		phoca_vitulina
+		phoca_largha
+		pusa_hispida
+		pusa_sibirica
+		halichoerus_grypus
+		phoca_groenlandica
+		phoca_fasciata
+		cystophora_cristata
+		erignathus_barbatus
+		mirounga_angustirostris
+		monachus_schauinslandi
+		arctocephalus_forsteri
+		phocarctos_hookeri
+		arctocephalus_pusillus
+		zalophus_californianus
+		eumetopias_jubatus
+		callorhinus_ursinus
+		odobenus_rosmarus
+		ursus_thibetanus
+		ursus_americanus
+		helarctos_malayanus
+		ursus_maritimus
+		ursus_arctos
+		tremarctos_ornatus
+		ailuropoda_melanoleuca
+		canis_familiaris
+		canis_lupus
+		canis_latrans
+		cuon_alpinus
+		lycaon_pictus
+		atelocynus_microtis
+		cerdocyon_thous
+		chrysocyon_brachyurus
+		speothos_venaticus
+		vulpes_vulpes
+		vulpes_corsac
+		vulpes_lagopus
+		vulpes_macrotis
+		nyctereutes_procyonoides
+		otocyon_megalotis
+		urocyon_cinereoargenteus
+		herpestes_auropunctatus
+		herpestes_javanicus
+		atilax_paludinosus
+		helogale_parvula
+		suricata_suricatta
+		galidia_elegans
+		cryptoprocta_ferox
+		fossa_fossana
+		parahyaena_brunnea
+		proteles_cristatus
+		crocuta_crocuta
+		genetta_maculata
+		genetta_pardina
+		genetta_tigrina
+		genetta_genetta
+		genetta_johnstoni
+		viverricula_indica
+		arctictis_binturong
+		paguma_larvata
+		hemigalus_derbyanus
+		felis_silvestris
+		felis_catus
+		felis_margarita
+		felis_chaus
+		felis_nigripes
+		prionailurus_bengalensis
+		prionailurus_bengalensis_euptilurus
+		prionailurus_viverrinus
+		lynx_lynx
+		lynx_rufus
+		puma_concolor
+		acinonyx_jubatus
+		caracal_caracal
+		leptailurus_serval
+		leopardus_pardalis
+		leopardus_colocolo
+		leopardus_geoffroyi
+		leopardus_tigrinus
+		panthera_pardus
+		panthera_leo
+		panthera_tigris_altaica
+		panthera_tigris
+		neofelis_nebulosa
+		prionodon_linsang
+		nandinia_binotata
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	lutra_lutra,
+		2	enhydra_lutris,
+		3	galictis_vittata,
+		4	ictonyx_striatus,
+		5	vormela_peregusna,
+		6	mustela_putorius_furo,
+		7	mustela_lutreola,
+		8	mustela_nigripes,
+		9	mustela_sibirica,
+		10	mustela_itatsi,
+		11	mustela_altaica,
+		12	mustela_nivalis,
+		13	mustela_erminea,
+		14	mustela_frenata,
+		15	melogale_moschata,
+		16	martes_melampus,
+		17	martes_zibellina,
+		18	martes_martes,
+		19	martes_americana,
+		20	martes_foina,
+		21	martes_flavigula,
+		22	gulo_gulo,
+		23	eira_barbara,
+		24	meles_meles,
+		25	mellivora_capensis,
+		26	taxidea_taxus,
+		27	nasua_nasua,
+		28	procyon_lotor,
+		29	bassariscus_astutus,
+		30	potos_flavus,
+		31	mephitis_mephitis,
+		32	ailurus_fulgens,
+		33	phoca_vitulina,
+		34	phoca_largha,
+		35	pusa_hispida,
+		36	pusa_sibirica,
+		37	halichoerus_grypus,
+		38	phoca_groenlandica,
+		39	phoca_fasciata,
+		40	cystophora_cristata,
+		41	erignathus_barbatus,
+		42	mirounga_angustirostris,
+		43	monachus_schauinslandi,
+		44	arctocephalus_forsteri,
+		45	phocarctos_hookeri,
+		46	arctocephalus_pusillus,
+		47	zalophus_californianus,
+		48	eumetopias_jubatus,
+		49	callorhinus_ursinus,
+		50	odobenus_rosmarus,
+		51	ursus_thibetanus,
+		52	ursus_americanus,
+		53	helarctos_malayanus,
+		54	ursus_maritimus,
+		55	ursus_arctos,
+		56	tremarctos_ornatus,
+		57	ailuropoda_melanoleuca,
+		58	canis_familiaris,
+		59	canis_lupus,
+		60	canis_latrans,
+		61	cuon_alpinus,
+		62	lycaon_pictus,
+		63	atelocynus_microtis,
+		64	cerdocyon_thous,
+		65	chrysocyon_brachyurus,
+		66	speothos_venaticus,
+		67	vulpes_vulpes,
+		68	vulpes_corsac,
+		69	vulpes_lagopus,
+		70	vulpes_macrotis,
+		71	nyctereutes_procyonoides,
+		72	otocyon_megalotis,
+		73	urocyon_cinereoargenteus,
+		74	herpestes_auropunctatus,
+		75	herpestes_javanicus,
+		76	atilax_paludinosus,
+		77	helogale_parvula,
+		78	suricata_suricatta,
+		79	galidia_elegans,
+		80	cryptoprocta_ferox,
+		81	fossa_fossana,
+		82	parahyaena_brunnea,
+		83	proteles_cristatus,
+		84	crocuta_crocuta,
+		85	genetta_maculata,
+		86	genetta_pardina,
+		87	genetta_tigrina,
+		88	genetta_genetta,
+		89	genetta_johnstoni,
+		90	viverricula_indica,
+		91	arctictis_binturong,
+		92	paguma_larvata,
+		93	hemigalus_derbyanus,
+		94	felis_silvestris,
+		95	felis_catus,
+		96	felis_margarita,
+		97	felis_chaus,
+		98	felis_nigripes,
+		99	prionailurus_bengalensis,
+		100	prionailurus_bengalensis_euptilurus,
+		101	prionailurus_viverrinus,
+		102	lynx_lynx,
+		103	lynx_rufus,
+		104	puma_concolor,
+		105	acinonyx_jubatus,
+		106	caracal_caracal,
+		107	leptailurus_serval,
+		108	leopardus_pardalis,
+		109	leopardus_colocolo,
+		110	leopardus_geoffroyi,
+		111	leopardus_tigrinus,
+		112	panthera_pardus,
+		113	panthera_leo,
+		114	panthera_tigris_altaica,
+		115	panthera_tigris,
+		116	neofelis_nebulosa,
+		117	prionodon_linsang,
+		118	nandinia_binotata
+	;
+	TREE * UNTITLED = [&R] (((((((((((((1:0.1909456429,2:0.1909456429):0.08905513029,3:0.2800007732):0.01693342612,(4:0.1834261192,5:0.1834261192):0.1135080801):0.01563828965,(((((((6:0.01260341761,7:0.01260341761):0.007770818836,8:0.02037423645):0.01500038661,9:0.03537462306):0.0197749942,10:0.05514961726):0.05043300085,(11:0.07405474368,12:0.07405474368):0.03152787443):0.0371916802,13:0.1427742983):0.08277275188,14:0.2255470502):0.0870254388):0.02576741669,15:0.3383399057):0.02659862368,((((((16:0.05058764401,(17:0.03067733704,18:0.03067733704):0.01991030697):0.01902110879,19:0.0696087528):0.06085208382,20:0.1304608366):0.09265058378,21:0.2231114204):0.02251991031,22:0.2456313307):0.03168251759,23:0.2773138483):0.08762468105):0.02298383979,(24:0.3659050491,25:0.3659050491):0.02201732003):0.0577398902,26:0.4456622593):0.1709580144,((27:0.4338707183,(28:0.2307082657,29:0.2307082657):0.2031624526):0.07221835614,30:0.5060890745):0.1105311993):0.05491765252,(31:0.6340562901,32:0.6340562901):0.03748163612):0.09585942937,((((((((33:0.03475605041,34:0.03475605041):0.03141189206,((35:0.0450784814,36:0.0450784814):0.009529884791,37:0.0546083662):0.01155957628):0.09023428439,(38:0.1119229877,39:0.1119229877):0.04447923916):0.03199180391,40:0.1883940308):0.1043261424,41:0.2927201732):0.04919585556,(42:0.2377638599,43:0.2377638599):0.1041521689):0.1677491688,(((((44:0.07382277894,45:0.07382277894):0.006610995129,46:0.08043377407):0.02810639449,(47:0.08574963272,48:0.08574963272):0.02279053584):0.07724425887,49:0.1857844274):0.1640763937,50:0.3498608212):0.1598043764):0.2401994897,(((((51:0.1141266527,52:0.1141266527):0.01569628083,53:0.1298229336):0.02147606897,(54:0.02945952215,55:0.02945952215):0.1218394804):0.212131756,56:0.3634307585):0.09361710353,57:0.4570478621):0.2928168252):0.01753266837):0.1253189515,((((((58:0.1101832521,59:0.1101832521):0.06108404856,60:0.1712673007):0.1042488208,61:0.2755161215):0.05037500967,62:0.3258911312):0.04094177685,(((63:0.1139140184,64:0.1139140184):0.1877754581,65:0.3016894765):0.04948581149,66:0.351175288):0.01565762004):0.15508776,(((((67:0.1796566922,68:0.1796566922):0.04998840176,(69:0.04250753885,70:0.04250753885):0.1871375551):0.2123057295,71:0.4419508235):0.03100595376,72:0.4729567772):0.01774530271,73:0.49070208):0.03121858811):0.3707956391):0.1072836929,((((((((74:0.03653444676,75:0.03653444676):0.1606355834,76:0.1971700302):0.05385448079,(77:0.1868669296,78:0.1868669296):0.06415758138):0.2231500812,((79:0.3738498415,80:0.3738498415):0.01571561123,81:0.3895654527):0.08460913941):0.07879069048,(82:0.182826877,(83:0.1660287636,84:0.1660287636):0.01679811335):0.3701384056):0.101368592,(((((85:0.1077862832,86:0.1077862832):0.005876440114,(87:0.02329312611,88:0.02329312611):0.09036959715):0.04341606742,89:0.1570787907):0.2939766489,90:0.4510554396):0.06958942241,((91:0.196377484,92:0.196377484):0.2194193149,93:0.4157967989):0.1048480631):0.1336890126):0.03593520452,((((((((94:0.03958864919,95:0.03958864919):0.02406634192,96:0.06365499111):0.1216268461,(97:0.1666666667,98:0.1666666667):0.01861517049):0.09545349107,((99:0.0007732158045,100:0.0007732158045):0.08277275188,101:0.08354596768):0.1971893606):0.03036805072,(((102:0.1550490992,103:0.1550490992):0.09357844274,(104:0.2009394572,105:0.2009394572):0.04768808474):0.05530426042,(106:0.2424804763,107:0.2424804763):0.06145132607):0.007171576587):0.0320304647,((108:0.1864609913,109:0.1864609913):0.01552230728,(110:0.1295909688,111:0.1295909688):0.0723923297):0.1411505451):0.04117374159,(((112:0.1159630403,113:0.1159630403):0.08333333333,(114:0.03817753035,115:0.03817753035):0.1611188433):0.06299775767,116:0.2622941313):0.122013454):0.2454380268,117:0.629745612):0.0605234671):0.0830820382,118:0.7733511173):0.2266488827):0;
+END;

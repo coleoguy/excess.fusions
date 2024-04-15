@@ -1,14 +1,14 @@
 #### PACKAGES ####
-
 library(phytools)
 library(doSNOW)
 library(viridis)
+library(doSNOW)
 source("../functions.R")
 
 #### LOAD DATA ####
 dat <- read.csv("../../data/mammals/chromes/dat.csv",
                 as.is=T)[,c(1,4)]
-tree <- read.tree("../../data/mammals/trees/tree.nex")
+tree <- force.ultrametric(read.nexus("../../data/mammals/trees/tree.nex"),method="extend")
 mat <- as.matrix(read.csv("../../data/mammals/transition_matrix/transition_matrix_SAF.csv",
                           as.is=T,header = T))
 Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_SAF.csv",
@@ -34,17 +34,37 @@ colnames(mat) <- 1:8
 rownames(Qmat) <- 1:8
 colnames(Qmat) <- 1:8
 
+#### SET UP PARALLELIZATION ####
+
+# Define number of clusters
+nClust <- 100
+
+# Set up clusters, print intermediates to 
+cl <- makeCluster(nClust, outfile = "")
+registerDoSNOW(cl)
+
 #### PERFORM STOCHASTIC MAPPING ####
 
-hists <- make.simmap2(tree = tree,
-                      x = data.matrix,
-                      model = mat,
-                      nsim = 100,
-                      Q = Qmat,
-                      rejmax = 1000000,
-                      rejint = 100000,
-                      pi=c(1,0,0,0,0,0,0,0),
-                      monitor=T)
+hists <- foreach(i=1:100,
+                 .verbose = T,
+                 .packages = c("phytools","maps","ape")) %dopar% {
+                   make.simmap2(tree = tree,
+                   x = data.matrix,
+                   model = mat,
+                   nsim = 1,
+                   Q = Qmat,
+                   rejmax = 1000000,
+                   rejint = 100000,
+                   pi=c(1,0,0,0,0,0,0,0),
+                   monitor=T,
+                   parallel=c(i,100))
+                 }
+
+#Close cluster connection
+stopCluster(cl)
+
+#Set class of sim.out
+class(hists) <- c("multiSimmap","multiPhylo")
 
 #### FIX SIMMAP ####
 
@@ -65,22 +85,4 @@ overalprop.xy <- sum(hists.summarized$times[,1])/sum(hists.summarized$times[,9])
 #### SAVE OUTPUTS ####
 save(hists.summarized, file = "../../outputs/mammals/SAF_maps/hists.summarized.RData")
 save(hists, file="../../outputs/mammals/SAF_maps/hists.RData")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

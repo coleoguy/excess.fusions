@@ -1202,9 +1202,22 @@ fix.simmap <- function(hists, tips, transition.matrix){
       fail.internal <- as.numeric(hists[[i]]$edge[fail.internal.edges,2])
       fail.internal.start <- hists[[i]]$edge[
         which(hists[[i]]$edge[,2] %in% fail.internal), 1]
-      fail.internal.leading.edge <- which(hists[[i]]$edge[,2] %in% 
-                                            fail.internal.start)
-      fail.internal.leading.maps <- hists[[i]]$maps[fail.internal.leading.edge]
+      fail.internal.leading.edge <- c()
+      fail.internal.leading.maps <- list()
+      for(j in 1:length(fail.internal.start)){
+        if(fail.internal.start[j] != (length(hists[[i]]$tip.label) + 1)){
+          fail.internal.leading.edge <- c(fail.internal.leading.edge,
+                                          which(hists[[i]]$edge[,2] == 
+                                                fail.internal.start[j]))
+          fail.internal.leading.maps[j] <- hists[[i]]$maps[which(hists[[i]]$edge[,2] == fail.internal.start[j])]
+        } else {
+          fail.internal.leading.edge <- c(fail.internal.leading.edge,
+                                          0)
+          sibling.leading.edge <- which(hists[[i]]$edge[,1] == hists[[i]]$edge[fail.internal.edges[j],1] &
+                                          hists[[i]]$edge[,2] != hists[[i]]$edge[fail.internal.edges[j],2])
+          fail.internal.leading.maps[[j]] <- hists[[i]]$maps[[sibling.leading.edge]][1]
+        }
+      }
       
       fail.internal.start.states <- c()
       
@@ -1214,7 +1227,10 @@ fix.simmap <- function(hists, tips, transition.matrix){
           length(fail.internal.leading.maps[[j]])]
       }
       
-      names(fail.internal.start.states) <- unique(fail.internal.start)
+      names(fail.internal.start.states) <- fail.internal.start
+      if(TRUE %in% duplicated(names(fail.internal.start.states))){
+        fail.internal.start.states <- fail.internal.start.states[-which(duplicated(names(fail.internal.start.states)))]
+      }
       
       fail.internal.end.states <- rep("fail", length(fail.internal))
       names(fail.internal.end.states) <- fail.internal
