@@ -10,13 +10,17 @@ dat <- read.csv("../../data/mammals/chromes/dat.csv",
 tree <- force.ultrametric(read.nexus("../../data/mammals/trees/tree.nex"),method = "extend")
 mat <- as.matrix(read.csv("../../data/mammals/transition_matrix/transition_matrix_hapauto.csv",
                           as.is=T,header = T))
+# For analysis of base rates
+# Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_base.csv",
+#                            as.is=T,header=T))
+
 # For analysis of adjusted prior rates
 # Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_adjusted_prior.csv",
-#                            as.is=T,header=T)) 
+#                            as.is=T,header=T))
 
 # For analysis of final rates
-# Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_final.csv",
-#                            as.is=T,header=T)) 
+Qmat <- as.matrix(read.csv("../../data/mammals/transition_matrix/Q_matrix_hapauto_final.csv",
+                           as.is=T,header=T))
 
 #scale tree to unit rate
 tree$edge.length <- tree$edge.length/max(branching.times(tree))

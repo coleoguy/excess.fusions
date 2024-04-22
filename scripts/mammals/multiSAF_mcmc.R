@@ -85,27 +85,27 @@ w <- diff(sapply(temp.mcmc[2:3],
                  quantile, c(.05, .95)))
 
 
-#run MCMC
-model.mcmc <- diversitree::mcmc(lik=model.con,
-                                x.init=runif(2,0,1),
-                                prior=make.prior.exponential(r=0.5),
-                                #upper=c(100,100,100,100),
-                                nsteps = 500,
-                                w=w)
+#run 4 replicate MCMC
+model.mcmc <- list()
+model.mcmc.postburn <- as.data.frame(matrix(NA,nrow=0,ncol=4))
+for(i in 1:4){
+  model.mcmc[[i]]<- diversitree::mcmc(lik=model.con,
+                                      x.init=runif(2,0,1),
+                                      prior=make.prior.exponential(r=0.5),
+                                      #upper=c(100,100,100,100),
+                                      nsteps = 500,
+                                      w=w)
+  model.mcmc.postburn <- rbind(model.mcmc.postburn,model.mcmc[[i]][451:500,])
+}
 
-#check for convergence
-plot(x=model.mcmc$i,y=model.mcmc$p,type="l")
 
 #### BUILD QMATRIX ####
-
-#Extract post burn portion
-model.mcmc.postburn <- model.mcmc[450:500,]
 
 #Get mean params
 params <- c(mean(model.mcmc.postburn$SAF),
             mean(model.mcmc.postburn$Ro))
 
-names(params) <- colnames(model.mcmc[,2:3])
+names(params) <- colnames(model.mcmc.postburn[,2:3])
 
 #Sub into matrix
 parMat[parMat == "SAF"] <- params[1]
@@ -119,7 +119,7 @@ parMat <- sapply(parMat[,1:ncol(parMat)],as.numeric)
 diag(parMat) <- -rowSums(parMat)
 
 #### SAVE QMATRIX AND MCMC####
-save(model.mcmc,file="../../outputs/mammals/mcmc/multiSAF.RData")
+save(model.mcmc,model.mcmc.postburn,file="../../outputs/mammals/mcmc/multiSAF.RData")
 write.csv(parMat,
           paste0("../../data/mammals/transition_matrix/Q_matrix_SAF.csv"),
           row.names=F,quote=F)

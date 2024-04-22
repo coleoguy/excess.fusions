@@ -7,7 +7,7 @@ library(igraph)
 scaleTreeRates <- function(tree,tip.states,
                            model,
                            fixedQ=NULL,
-                           max.ratio=10,
+                           max.ratio=2,
                            nbins=10,
                            max.transition = 1,
                            var.start = F,

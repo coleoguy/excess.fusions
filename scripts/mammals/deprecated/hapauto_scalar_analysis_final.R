@@ -23,7 +23,7 @@ names(tip.states) <- dat$tree.name
 #### RUN SCALING ANALYSIS ####
 scaled.tree <- scaleTreeRates(tree = tree,
                               tip.states = tip.states,
-                              max.ratio = 2,
+                              max.ratio = 10,
                               nbins=10,
                               model = mat,
                               fixedQ = Qmat,

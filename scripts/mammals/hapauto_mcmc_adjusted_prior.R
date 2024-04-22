@@ -48,22 +48,25 @@ temp.mcmc <- temp.mcmc[-c(1:50), ]
 w <- diff(sapply(temp.mcmc[2:3],
                  quantile, c(.05, .95)))
 
-#run MCMC
-model.mcmc <- diversitree::mcmc(lik=model.con$`likelihood function`,
-                                x.init=runif(2,0,1),
-                                prior=make.prior.exponential(r=10),
-                                #upper=c(100,100,100,100),
-                                nsteps = 500,
-                                w=w)
+#run 4 replicate MCMC
+model.mcmc <- list()
+model.mcmc.postburn <- as.data.frame(matrix(NA,nrow=0,ncol=4))
+for(i in 1:4){
+  model.mcmc[[i]]<- diversitree::mcmc(lik=model.con$`likelihood function`,
+                                      x.init=runif(2,0,1),
+                                      prior=make.prior.exponential(r=10),
+                                      #upper=c(100,100,100,100),
+                                      nsteps = 500,
+                                      w=w)
+  model.mcmc.postburn <- rbind(model.mcmc.postburn,model.mcmc[[i]][451:500,])
+}
 
 #### BUILD QMATRIX ####
-model.mcmc.postburn <- model.mcmc[450:500,]
-
 #Get mean params
 params <- c(mean(model.mcmc.postburn$asc1),
             mean(model.mcmc.postburn$desc1))
 
-names(params) <- colnames(model.mcmc[,2:3])
+names(params) <- colnames(model.mcmc.postburn[,2:3])
 
 #Sub into matrix
 parMat <- model.con$`parameter matrix`
@@ -83,7 +86,7 @@ dropClade1 <- extract.clade(tree,node=tree$edge[1285,2])$tip.label
 cut.tree <- drop.tip(tree, c(dropClade1))
 
 #### SAVE MCMC QMATRIX AND TREE####
-save(model.mcmc,file="../../outputs/mammals/mcmc/hapauto_adjusted_prior.RData")
+save(model.mcmc,model.mcmc.postburn,file="../../outputs/mammals/mcmc/hapauto_adjusted_prior.RData")
 write.csv(parMat,
           paste0("../../data/mammals/transition_matrix/Q_matrix_hapauto_adjusted_prior.csv"),
           row.names=F,quote=F)

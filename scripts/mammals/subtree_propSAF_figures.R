@@ -31,6 +31,8 @@ for(i in 1:5){
   #### LOAD DATA ####
   hpd.intervals <- read.csv(paste0("../../outputs/mammals/subtrees/HPD_",clades[i],"_intervals.csv"))[,-1]
   raw.dat <- read.csv(paste0("../../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
+  print(clades[i])
+  print(mean(raw.dat$proportion[which(raw.dat$category == "Observed")]))
   
   #### PLOT ####
   SAF.overlap <- ggplot()+
