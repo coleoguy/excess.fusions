@@ -1,10 +1,11 @@
-# This script compares haploid autosome number of different *INSERT LEVEL OF ORGANIZATION*
+# This script compares haploid autosome number of different mammlian families
 # A plot is generated which visualizes these comparisons
+# This corresponds with figure 1 in the manuscript *INSERT MANUSCRIPT TITLE *
 
 #### PACKAGES ####
 library(ggplot2)
 #### LOAD DATA ####
-dat <- read.csv("../../data/mammals/chromes/mammal_chroms_working.csv",
+dat <- read.csv("../../../data/mammals/chromes/mammal_chroms_working.csv",
                 as.is=T)[,c(2,3,4,5,12,13)]
 dat <- dat[-which(dat$codedSCS == "unclear"),]
 
@@ -90,12 +91,12 @@ meanHapPlot <- ggplot(data=meanHapauto,aes(x=scs,y=hapauto)) +
 
 #### SAVE PLOT ####
 ggsave(meanHapPlot,
-       filename = paste0("../../figures/mammals/meanHapautoShift.pdf"),
+       filename = paste0("./fig1.pdf"),
        width = 3.5,
        height = 3.5,
        units = "in")
 ggsave(meanHapPlot,
-       filename = paste0("../../figures/mammals/meanHapautoShift.jpg"),
+       filename = paste0("./fig1.jpg"),
        width = 3.5,
        height = 3.5,
        units = "in")

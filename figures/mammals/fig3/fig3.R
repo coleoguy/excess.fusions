@@ -1,3 +1,7 @@
+# This script produces a figure comparing rates of autosomal fusion and fission across different mammalian clades
+# This corresponds with figure 3 in the manuscript *INSERT MANUSCRIPT NAME*
+# Arrange parts a and b of this figure in the "fig3.pptx" slide
+
 #### LOAD PACKAGES ####
 library(ggplot2)
 library(phytools)
@@ -14,7 +18,7 @@ cladesForFigure <- c("Carnivora",
                      "Artiodactlya",
                      "Yangochiroptera",
                      "Rodentia",
-                     "Primatomorpha")
+                     "Primates")
 
 theme_density <- theme(panel.grid.major = element_blank(),
                        panel.grid.minor = element_blank(),
@@ -35,7 +39,7 @@ theme_density <- theme(panel.grid.major = element_blank(),
                        legend.spacing.y = unit(0.03,"inch"))
 
 #### GET DEPTH OF EACH CLADE ####
-tree <- force.ultrametric(read.nexus("../../data/mammals/trees/tree.nex"),method="extend")
+tree <- force.ultrametric(read.nexus("../../../data/mammals/trees/tree.nex"),method="extend")
 
 #Define edges of interest
 edges <- c(181,448,796,1285,1718)
@@ -58,7 +62,7 @@ hpdInts <- as.data.frame(matrix(NA,0,4))
 
 #load in data for each clade
 for( i in 1:5){
-  load(paste0("../../outputs/mammals/mcmc/subtrees/hapauto/",clades[i],".RData"))
+  load(paste0("../../../outputs/mammals/mcmc/subtrees/hapauto/",clades[i],".RData"))
   
   #append to df
   rawProps <- rbind(rawProps,
@@ -119,12 +123,22 @@ fusionOverlap <- ggplot()+
 
 #### SAVE FIGURES ####
 ggsave(fissionOverlap,
-       filename = paste0("../../figures/mammals/subtrees/subtree_fission_overlap.pdf"),
+       filename = paste0("./fig2b.pdf"),
        width = 3.5,
        height = 3.5,
        units = "in")
 ggsave(fusionOverlap,
-       filename = paste0("../../figures/mammals/subtrees/subtree_fusion_overlap.pdf"),
+       filename = paste0("./fig2a.pdf"),
+       width = 3.5,
+       height = 3.5,
+       units = "in")
+ggsave(fissionOverlap,
+       filename = paste0("./fig2b.jpg"),
+       width = 3.5,
+       height = 3.5,
+       units = "in")
+ggsave(fusionOverlap,
+       filename = paste0("./fig2a.jpg"),
        width = 3.5,
        height = 3.5,
        units = "in")

@@ -1,9 +1,12 @@
+# This script produces a figure comparing observed and expected rates of SA-fusion
+# This corresponds with figure 4 in the manuscript *INSERT MANUSCRIPT NAME*
+
 #### PACKAGES ####
 library(ggplot2)
 
 #### LOAD DATA ####
-hpd.intervals <- read.csv("../../outputs/mammals/HPD_intervals.csv")[,-1]
-raw.dat <- read.csv("../../outputs/mammals/proportions_raw.csv")[,-1]
+hpd.intervals <- read.csv("../../../outputs/mammals/HPD_intervals.csv")[,-1]
+raw.dat <- read.csv("../../../outputs/mammals/proportions_raw.csv")[,-1]
 
 #### OVERLAP PLOTS ####
 theme_density <- theme(panel.grid.major = element_blank(),
@@ -43,12 +46,12 @@ plot(SAF.overlap)
 
 #### SAVE PLOT ####
 ggsave(SAF.overlap,
-       filename = paste0("../../figures/mammals/observed_null_overlap.pdf"),
+       filename = paste0("./fig4.pdf"),
        width = 3.5,
        height = 3.5,
        units = "in")
 ggsave(SAF.overlap,
-       filename = paste0("../../figures/mammals/observed_null_overlap.jpg"),
+       filename = paste0("./fig4.jpg"),
        width = 3.5,
        height = 3.5,
        units = "in")

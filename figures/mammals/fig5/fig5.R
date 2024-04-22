@@ -33,7 +33,7 @@ clades_null <- as.data.frame(matrix(ncol=2,nrow=5))
 #loop through csv files for clades
 for(i in 1:5){
   #get raw data
-  raw.dat <- read.csv(paste0("../../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
+  raw.dat <- read.csv(paste0("../../../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
   
   clades_observed <- rbind(clades_observed,
                            cbind(raw.dat[1:100,1],
@@ -55,7 +55,7 @@ levels(clades_observed$clade) <- levels(clades_null$clade) <- c("Carnivora",
                                                                 "Artiodactlya",
                                                                 "Yangochiroptera",
                                                                 "Rodentia",
-                                                                "Primatomorpha")
+                                                                "Primates")
 
 #### PLOT ####
 subtree_scatter <- ggplot()+
@@ -73,12 +73,12 @@ subtree_scatter <- ggplot()+
   theme_violin_bar
 
 ggsave(subtree_scatter,
-       filename = paste0("../../figures/mammals/subtrees/clades_scatter.pdf"),
+       filename = paste0("./fig5.pdf"),
        width = 3.5,
        height = 3.5,
        units = "in")
 ggsave(subtree_scatter,
-       filename = paste0("../../figures/mammals/subtrees/clades_scatter.jpg"),
+       filename = paste0("./fig5.jpg"),
        width = 3.5,
        height = 3.5,
        units = "in")

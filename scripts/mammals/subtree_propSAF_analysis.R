@@ -55,6 +55,10 @@ for(i in 1:5){
   #Divide
   obspropSAF <- SAF.counts/(total.counts)
   
+  print(clades[i])
+  print(mean(SAF.counts))
+  print(mean(obspropSAF))
+
   #### NULL SAF ####
   
   #null proportions vector
