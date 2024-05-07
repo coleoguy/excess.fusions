@@ -32,8 +32,12 @@ for(i in 1:5){
   hpd.intervals <- read.csv(paste0("../../outputs/mammals/subtrees/HPD_",clades[i],"_intervals.csv"))[,-1]
   raw.dat <- read.csv(paste0("../../outputs/mammals/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
   print(clades[i])
-  print(mean(raw.dat$proportion[which(raw.dat$category == "Observed")]))
+  print(paste0("Observed mean: ", mean(raw.dat$proportion[which(raw.dat$category == "Observed")])))
+  print(paste0("Observed hpd: ", hpd.intervals$x[which(hpd.intervals$category == "Observed")]))
+  print(paste0("Null mean: ",mean(raw.dat$proportion[which(raw.dat$category == "Null")])))
+  print(paste0("Null hpd: ", hpd.intervals$x[which(hpd.intervals$category == "Null")]))
   
+}
   #### PLOT ####
   SAF.overlap <- ggplot()+
     geom_density(aes(x=raw.dat$proportion,fill=raw.dat$category),

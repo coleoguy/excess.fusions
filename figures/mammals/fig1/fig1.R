@@ -4,6 +4,7 @@
 
 #### PACKAGES ####
 library(ggplot2)
+
 #### LOAD DATA ####
 dat <- read.csv("../../../data/mammals/chromes/mammal_chroms_working.csv",
                 as.is=T)[,c(2,3,4,5,12,13)]
