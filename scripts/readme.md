@@ -1,8 +1,8 @@
+**runAllAnalyses.bash: This script allows you to run all analyses in a computing cluster environment. Look here to find the order in which to run scripts.**
+
 functions.R: This script contains a collection of custom functions used in analyses. Some of the functions here can also be found in the package evobiR.
 
 processTree.R: Prune tree from Álvarez-Carretero et al. (2022).
-
-runAllAnalyses.bash: This script allows you to run all analyses in a computing cluster environment. Look here to find the order in which to run scripts.
 
 multiSAF_mcmc.R: Estimation of autosome-sex chromosome fusion rates across the whole tree.
 
