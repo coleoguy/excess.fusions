@@ -6,8 +6,8 @@
 #SBATCH -o runAll
 
 #activate conda
-module load anaconda3/2022.10
-conda activate compMethods
+#module load anaconda3/2022.10
+#conda activate compMethods
 
 #run mammal wide scripts
 Rscript multiSAF_mcmc.R
