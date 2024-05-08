@@ -16,7 +16,7 @@ hapauto_mapping.R: Stochastic mapping of autosomal fusions and fissions across t
 
 propSAF_analysis.R: Calculating null and observed proportions of autosome-sex chromosome fusions across the whole tree.
 
-propSAF_analysis.R: Calculating modified null and observed proportions of autosome-sex chromosome fusions across the whole tree. Null proportions here are calculated assuming a tree-wide XXY sex chromosome system.
+propSAF_analysisXXY.R: Calculating modified null and observed proportions of autosome-sex chromosome fusions across the whole tree. Null proportions here are calculated assuming a tree-wide XXY sex chromosome system.
 
 subtree_hapauto_mcmc.R: Estimation of autosomal fusion and fission rates across subtrees.
 
@@ -28,6 +28,7 @@ subtree_multiSAF_mapping.R: Stochastic mapping of autosome-sex chromosome fusion
 
 subtree_propSAF_analysis.R: Calculating null and observed proportions of autosome-sex chromosome fusions across subtrees.
 
+subtree_propSAF_analysisXXY.R: Calculating null and observed proportions of autosome-sex chromosome fusions across subtrees. Null proportions here are calculated assuming a tree-wide XXY sex chromosome system.
 
 
 
