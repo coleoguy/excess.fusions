@@ -1512,7 +1512,6 @@ fix.simmap <- function(hists, tips, transition.matrix){
   return(hists)
 }
 
-
 #### MISC ####
 describe.simmap2 <- function (tree, ...) {
   if (hasArg(plot)) 
