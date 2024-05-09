@@ -30,7 +30,7 @@ subtree_multiSAF_mapping.R: Stochastic mapping of autosome-sex chromosome fusion
 
 subtree_propSAF_analysis.R: Calculating null and observed proportions of autosome-sex chromosome fusions across subtrees.
 
-subtree_propSAF_analysisXXY.R: Calculating null and observed proportions of autosome-sex chromosome fusions across subtrees. Null proportions here are calculated assuming a tree-wide XXY sex chromosome system.
+subtree_propSAF_analysisXXY.R: Calculating modified null and observed proportions of autosome-sex chromosome fusions across subtrees. Null proportions here are calculated assuming a tree-wide XXY sex chromosome system.
 
 
 
