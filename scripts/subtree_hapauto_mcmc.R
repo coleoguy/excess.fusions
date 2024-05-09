@@ -33,7 +33,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 #Remove redundant variables
 rm(edges)

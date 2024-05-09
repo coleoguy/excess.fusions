@@ -15,7 +15,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 #### BUILD MODEL ####
 parMat <- matrix("0",

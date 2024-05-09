@@ -14,7 +14,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 #### LOOP THROUGH CLADES ####
 for(i in 1:5){

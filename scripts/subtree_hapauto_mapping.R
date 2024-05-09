@@ -15,7 +15,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 #Define edges of interest
 edges <- c(181,448,796,1285,1718)
