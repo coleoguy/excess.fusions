@@ -7,3 +7,5 @@ matrix_carnivora.csv: Filled transition matrix describing autosomal fusion and f
 matrix_primatomorpha.csv: Filled transition matrix describing autosomal fusion and fission in primates.
 
 matrix_yangochiroptera.csv: Filled transition matrix describing autosomal fusion and fission in yangochiropterans.
+
+matrix_*clade*: Filled transition matrix describing autosomal fusion and fission in clade 
