@@ -128,12 +128,12 @@ for(i in 1:5){
                        HPDinterval(as.mcmc(expSA)))
   
   write.csv(hpd.intervals,
-            paste0("../outputs/subtrees/HPD_",clades[i],"_intervals.csv"),
+            paste0("../outputs/SAF_proportions/subtrees/HPD_",clades[i],"_intervals.csv"),
             quote=F,
             row.names=T)
   
   write.csv(raw.props,
-            paste0("../outputs/subtrees/proportions_",clades[i],"_raw.csv"),
+            paste0("../outputs/SAF_proportions/subtrees/proportions_",clades[i],"_raw.csv"),
             quote=F,
             row.names=T)
 }

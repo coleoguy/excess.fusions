@@ -1,0 +1,1 @@
+*clade*.RData: MCMC output from autosomal fusion and fission rate estimation for *clade*.

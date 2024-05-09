@@ -129,12 +129,12 @@ hpd.intervals$x <- c(HPDinterval(as.mcmc(obspropSAF)),
                      HPDinterval(as.mcmc(expSA)))
 
 write.csv(hpd.intervals,
-          paste0("../outputs/HPD_intervals.csv"),
+          paste0("../outputs/SAF_proportions/HPD_intervals.csv"),
           quote=F,
           row.names=T)
 
 write.csv(raw.props,
-          paste0("../outputs/proportions_raw.csv"),
+          paste0("../outputs/SAF_proportions/proportions_raw.csv"),
           quote=F,
           row.names=T)
 

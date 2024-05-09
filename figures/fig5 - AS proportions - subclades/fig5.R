@@ -33,7 +33,7 @@ clades_null <- as.data.frame(matrix(ncol=2,nrow=5))
 #loop through csv files for clades
 for(i in 1:5){
   #get raw data
-  raw.dat <- read.csv(paste0("../../outputs/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
+  raw.dat <- read.csv(paste0("../../outputs/SAF_proportions/subtrees/proportions_",clades[i],"_raw.csv"))[,-1]
   
   clades_observed <- rbind(clades_observed,
                            cbind(raw.dat[1:100,1],

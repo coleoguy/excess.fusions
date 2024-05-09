@@ -5,8 +5,8 @@
 library(ggplot2)
 
 #### LOAD DATA ####
-hpd.intervals <- read.csv("../../outputs/HPD_intervals.csv")[,-1]
-raw.dat <- read.csv("../../outputs/proportions_raw.csv")[,-1]
+hpd.intervals <- read.csv("../../outputs/SAF_proportions/HPD_intervals.csv")[,-1]
+raw.dat <- read.csv("../../outputs/SAF_proportions/proportions_raw.csv")[,-1]
 
 #### OVERLAP PLOTS ####
 theme_density <- theme(panel.grid.major = element_blank(),
