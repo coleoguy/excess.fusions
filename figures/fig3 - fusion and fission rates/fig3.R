@@ -12,7 +12,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 cladesForFigure <- c("Carnivora",
                      "Artiodactlya",

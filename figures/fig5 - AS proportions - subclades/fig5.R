@@ -6,7 +6,7 @@ clades <- c("carnivora",
             "artiodactyla",
             "yangochiroptera",
             "anomaluromorpha_castorimorpha_myomorpha",
-            "primatomorpha")
+            "primates")
 
 theme_violin_bar <- theme(panel.grid.major = element_blank(),
                           panel.grid.minor = element_blank(),
